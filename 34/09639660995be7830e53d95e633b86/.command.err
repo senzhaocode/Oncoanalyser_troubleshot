@@ -1,0 +1,5 @@
+INFO:    Environment variable SINGULARITYENV_TMPDIR is set, but APPTAINERENV_TMPDIR is preferred
+INFO:    Environment variable SINGULARITYENV_NXF_TASK_WORKDIR is set, but APPTAINERENV_NXF_TASK_WORKDIR is preferred
+INFO:    Environment variable SINGULARITYENV_NXF_DEBUG is set, but APPTAINERENV_NXF_DEBUG is preferred
+/usr/local/bin/isofox: line 6: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+/usr/local/bin/isofox: line 6: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory

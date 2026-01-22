@@ -1,0 +1,17 @@
+nextflow.trace/v2
+realtime=122000
+%cpu=9403
+cpu_model=AMD EPYC 7551 32-Core Processor
+rchar=5082292443
+wchar=1713274
+syscr=13990143
+syscw=1133
+read_bytes=0
+write_bytes=466944
+%mem=67
+vmem=112869872
+rss=35150212
+peak_vmem=112869872
+peak_rss=35150212
+vol_ctxt=327
+inv_ctxt=1
