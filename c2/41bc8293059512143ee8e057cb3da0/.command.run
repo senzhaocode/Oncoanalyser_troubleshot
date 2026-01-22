@@ -1,6 +1,6 @@
 #!/bin/bash
 ### ---
-### name: 'NFCORE_ONCOANALYSER:TARGETED:ISOFOX_QUANTIFICATION:ISOFOX (IPD1832)'
+### name: 'NFCORE_ONCOANALYSER:TARGETED:ISOFOX_QUANTIFICATION:ISOFOX (IPD2051)'
 ### container: '/ess/p1753/cluster/Software/nf-core-oncoanalyser_2.3.0/2_3_0/../singularity-images/depot.galaxyproject.org-singularity-hmftools-isofox-1.7.2--hdfd78af_1.img'
 ### outputs:
 ### - 'isofox/'
@@ -130,7 +130,7 @@ nxf_write_trace() {
 nxf_trace_mac() {
     local start_millis=$(nxf_date)
 
-    /usr/bin/env bash -C -e -u -o pipefail /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/34/09639660995be7830e53d95e633b86/.command.sh
+    /usr/bin/env bash -C -e -u -o pipefail /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/c2/41bc8293059512143ee8e057cb3da0/.command.sh
 
     local end_millis=$(nxf_date)
     local wall_time=$((end_millis-start_millis))
@@ -157,7 +157,7 @@ nxf_trace_linux() {
     local start_millis=$(nxf_date)
     trap 'kill $mem_proc' ERR
     
-    /usr/bin/env bash -C -e -u -o pipefail /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/34/09639660995be7830e53d95e633b86/.command.sh &
+    /usr/bin/env bash -C -e -u -o pipefail /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/c2/41bc8293059512143ee8e057cb3da0/.command.sh &
     local task=$!
 
     mem_fd=$(nxf_fd)
@@ -290,7 +290,7 @@ on_exit() {
     local exit_status=${nxf_main_ret:=0}
     [[ ${exit_status} -eq 0 && ${nxf_unstage_ret:=0} -ne 0 ]] && exit_status=${nxf_unstage_ret:=0}
     [[ ${exit_status} -eq 0 && ${last_err} -ne 0 ]] && exit_status=${last_err}
-    printf -- $exit_status > /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/34/09639660995be7830e53d95e633b86/.exitcode
+    printf -- $exit_status > /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/c2/41bc8293059512143ee8e057cb3da0/.exitcode
     set +u
     exit $exit_status
 }
@@ -301,30 +301,30 @@ on_term() {
 }
 
 nxf_launch() {
-    set +u; env - PATH="$PATH" ${TMP:+SINGULARITYENV_TMP="$TMP"} ${TMPDIR:+SINGULARITYENV_TMPDIR="$TMPDIR"} ${NXF_TASK_WORKDIR:+SINGULARITYENV_NXF_TASK_WORKDIR="$NXF_TASK_WORKDIR"} SINGULARITYENV_NXF_DEBUG="${NXF_DEBUG:=0}" singularity exec --no-home --pid -B /gpfs/projects02/p1753/cluster /ess/p1753/cluster/Software/nf-core-oncoanalyser_2.3.0/2_3_0/../singularity-images/depot.galaxyproject.org-singularity-hmftools-isofox-1.7.2--hdfd78af_1.img /bin/bash -c "cd $NXF_TASK_WORKDIR; eval $(nxf_container_env); bash -C -e -u -o pipefail /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/34/09639660995be7830e53d95e633b86/.command.run nxf_trace"
+    set +u; env - PATH="$PATH" ${TMP:+SINGULARITYENV_TMP="$TMP"} ${TMPDIR:+SINGULARITYENV_TMPDIR="$TMPDIR"} ${NXF_TASK_WORKDIR:+SINGULARITYENV_NXF_TASK_WORKDIR="$NXF_TASK_WORKDIR"} SINGULARITYENV_NXF_DEBUG="${NXF_DEBUG:=0}" singularity exec --no-home --pid -B /gpfs/projects02/p1753/cluster /ess/p1753/cluster/Software/nf-core-oncoanalyser_2.3.0/2_3_0/../singularity-images/depot.galaxyproject.org-singularity-hmftools-isofox-1.7.2--hdfd78af_1.img /bin/bash -c "cd $NXF_TASK_WORKDIR; eval $(nxf_container_env); bash -C -e -u -o pipefail /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/c2/41bc8293059512143ee8e057cb3da0/.command.run nxf_trace"
 }
 
 nxf_stage() {
     true
     # stage input files
     rm -f tso500_rna_gene_ids.csv
+    rm -f IPD2051-R03-P01-A08.md.bam.bai
     rm -f read_93_exp_counts.37.csv
     rm -f isofox.gene_normalisation.tso500.37.csv
     rm -f Homo_sapiens.GRCh37.GATK.illumina.fasta
     rm -f read_93_exp_gc_ratios.37.csv
-    rm -f IPD1832-R03-P01-A19.md.bam.bai
     rm -f Homo_sapiens.GRCh37.GATK.illumina.fasta.fai
-    rm -f IPD1832-R03-P01-A19.md.bam
+    rm -f IPD2051-R03-P01-A08.md.bam
     rm -f known_fusion_data.37.csv
     rm -f ensembl_data
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/hmf_panel_resources.tso500.37_v2.3.0/tso500_rna_gene_ids.csv tso500_rna_gene_ids.csv
+    ln -s /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/45/ce8c89ff7923598af63af95853e7c9/IPD2051-R03-P01-A08.md.bam.bai IPD2051-R03-P01-A08.md.bam.bai
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/hmf_panel_resources.tso500.37_v2.3.0/read_93_exp_counts.37.csv read_93_exp_counts.37.csv
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/hmf_panel_resources.tso500.37_v2.3.0/isofox.gene_normalisation.tso500.37.csv isofox.gene_normalisation.tso500.37.csv
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/25.1/Homo_sapiens.GRCh37.GATK.illumina.fasta Homo_sapiens.GRCh37.GATK.illumina.fasta
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/hmf_panel_resources.tso500.37_v2.3.0/read_93_exp_gc_ratios.37.csv read_93_exp_gc_ratios.37.csv
-    ln -s /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/ca/fadf51b9ac56b26b97336732009b54/IPD1832-R03-P01-A19.md.bam.bai IPD1832-R03-P01-A19.md.bam.bai
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/25.1/Homo_sapiens.GRCh37.GATK.illumina.fasta.fai Homo_sapiens.GRCh37.GATK.illumina.fasta.fai
-    ln -s /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/ca/fadf51b9ac56b26b97336732009b54/IPD1832-R03-P01-A19.md.bam IPD1832-R03-P01-A19.md.bam
+    ln -s /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/45/ce8c89ff7923598af63af95853e7c9/IPD2051-R03-P01-A08.md.bam IPD2051-R03-P01-A08.md.bam
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/hmf_pipeline_resources.37_v2.3.0/dna/sv/known_fusion_data.37.csv known_fusion_data.37.csv
     ln -s /gpfs/projects02/p1753/cluster/Software/hmftools/GRCh37_hmf/hmf_pipeline_resources.37_v2.3.0/common/ensembl_data ensembl_data
 }
@@ -354,7 +354,7 @@ nxf_main() {
     export NXF_BOXID="nxf-$(dd bs=18 count=1 if=/dev/urandom 2>/dev/null | base64 | tr +/ 0A | tr -d '\r\n')"
     NXF_SCRATCH=''
     [[ $NXF_DEBUG > 0 ]] && nxf_env
-    touch /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/34/09639660995be7830e53d95e633b86/.command.begin
+    touch /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work/c2/41bc8293059512143ee8e057cb3da0/.command.begin
     set +u
     set -u
     [[ $NXF_SCRATCH ]] && cd $NXF_SCRATCH

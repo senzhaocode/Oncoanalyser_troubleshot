@@ -4,10 +4,10 @@ mkdir -p isofox/
 isofox \
     -Xmx103079215104 \
      \
-    -sample IPD1832-R03-P01-A19 \
+    -sample IPD2051-R03-P01-A08 \
     -functions 'TRANSCRIPT_COUNTS;ALT_SPLICE_JUNCTIONS;FUSIONS;RETAINED_INTRONS' \
     -read_length 93 \
-    -bam_file IPD1832-R03-P01-A19.md.bam \
+    -bam_file IPD2051-R03-P01-A08.md.bam \
     -ref_genome Homo_sapiens.GRCh37.GATK.illumina.fasta \
     -ref_genome_version 37 \
     -ensembl_data_dir ensembl_data \
