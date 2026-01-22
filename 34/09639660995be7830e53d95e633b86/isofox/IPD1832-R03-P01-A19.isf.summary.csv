@@ -1,0 +1,2 @@
+SampleId,QcStatus,TotalFragments,DuplicateFragments,SplicedFragmentPerc,UnsplicedFragmentPerc,AltFragmentPerc,ChimericFragmentPerc,SplicedGeneCount,ReadLength,FragLength5th,FragLength50th,FragLength95th,EnrichedGenePercent,MedianGCRatio,ForwardStrandPercent
+IPD1832-R03-P01-A19,PASS,13318256,11861652,0.648,0.055,0.070,0.000,55,93,69,116,181,0.000,0.485,0.498
