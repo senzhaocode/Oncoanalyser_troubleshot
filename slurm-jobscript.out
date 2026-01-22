@@ -1,0 +1,3446 @@
+Starting job 23136598 on c1-11 on Colossus at Wed Jan 21 22:37:53 CET 2026
+
+curl: (6) Could not resolve host: www.nextflow.io
+Picked up _JAVA_OPTIONS: -XX:ParallelGCThreads=1
+
+ N E X T F L O W   ~  version 25.04.8
+
+WARN: It appears you have never run this project before -- Option `-resume` is ignored
+Launching `/ess/p1753/cluster/Software/nf-core-oncoanalyser_2.3.0/2_3_0/main.nf` [festering_dijkstra] DSL2 - revision: 63a14d602d
+
+
+------------------------------------------------------
+                                        ,--./,-.
+        ___     __   __   __   ___     /,-._.--~'
+  |\ | |__  __ /  ` /  \ |__) |__         }  {
+  | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                        `._,._,'
+  nf-core/oncoanalyser 2.3.0
+------------------------------------------------------
+
+Input/output options
+  input                        : /ess/p1753/cluster/TSO500_oncoanalyzer/samplesheet_two.csv
+  outdir                       : /ess/p1753/cluster/TSO500_oncoanalyzer/tso500_select_rna_output_v2.3
+
+Other options
+  mode                         : targeted
+  panel                        : tso500
+
+Reference data options
+  genome                       : GRCh37_hmf
+  genome_version               : 37
+  genome_type                  : no_alt
+  igenomes_base                : 
+  hmf_genomes_base             : /ess/p1753/cluster/Software/hmftools/
+  ref_data_hmf_data_path       : /cluster/projects/p1753/Software/hmftools/GRCh37_hmf/hmf_pipeline_resources.37_v2.3.0
+  ref_data_panel_data_path     : /cluster/projects/p1753/Software/hmftools/GRCh37_hmf/hmf_panel_resources.tso500.37_v2.3.0
+  ref_data_genome_fasta        : /ess/p1753/cluster/Software/hmftools//GRCh37_hmf/25.1/Homo_sapiens.GRCh37.GATK.illumina.fasta
+  ref_data_genome_fai          : /ess/p1753/cluster/Software/hmftools//GRCh37_hmf/25.1/Homo_sapiens.GRCh37.GATK.illumina.fasta.fai
+  ref_data_genome_dict         : /ess/p1753/cluster/Software/hmftools//GRCh37_hmf/25.1/Homo_sapiens.GRCh37.GATK.illumina.fasta.dict
+  ref_data_genome_bwamem2_index: /ess/p1753/cluster/Software/hmftools//GRCh37_hmf/25.1/bwa-mem2_index-2.2.1.tar.gz
+  ref_data_genome_img          : /ess/p1753/cluster/Software/hmftools//GRCh37_hmf/25.1/Homo_sapiens.GRCh37.GATK.illumina.fasta.img
+  ref_data_genome_gridss_index : /ess/p1753/cluster/Software/hmftools//GRCh37_hmf/25.1/gridss_index-2.13.2.tar.gz
+  ref_data_genome_star_index   : /ess/p1753/cluster/Software/hmftools//GRCh37_hmf/25.1/star_index-gencode_19-2.7.3a.tar.gz
+
+Generic options
+  trace_report_suffix          : 2026-01-21_22-37-59
+
+Core Nextflow options
+  runName                      : festering_dijkstra
+  containerEngine              : singularity
+  launchDir                    : /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer
+  workDir                      : /gpfs/projects02/p1753/cluster/TSO500_oncoanalyzer/work
+  projectDir                   : /ess/p1753/cluster/Software/nf-core-oncoanalyser_2.3.0/2_3_0
+  userName                     : p1753-senz
+  profile                      : singularity
+  configFiles                  : /ess/p1753/cluster/Software/nf-core-oncoanalyser_2.3.0/2_3_0/nextflow.config, /ess/p1753/cluster/Software/nf-core-oncoanalyser_2.3.0/2_3_0/conf/custom.config
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+------------------------------------------------------
+
+* The nf-core framework
+    https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+    https://github.com/nf-core/oncoanalyser/blob/master/CITATIONS.md
+
+WARN: The following invalid input values have been detected:
+
+* --max_cpus: 60
+* --max_memory: 480.GB
+* --max_time: 96.h
+
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 2 more processes waiting for tasks…
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 4 more processes waiting for tasks…
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 6 more processes waiting for tasks…
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 8 more processes waiting for tasks…
+
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX -
+[-        ] NFC…EFERENCE:DECOMP_STAR_INDEX -
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP -
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (1)
+[-        ] NFC…RENCE:DECOMP_BWAMEM2_INDEX | 0 of 1
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[-        ] NFC…D:READ_ALIGNMENT_DNA:FASTP | 0 of 4
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (6)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 0 of 1
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[ae/6f0bf4] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 4
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (6)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 0 of 1
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[3d/1dfdc7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 4
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (6)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 0 of 1
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[cb/4ee73a] NFC…D2051_IPD2051-D01-P01-A08) | 2 of 4
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (6)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 0 of 1
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[ae/6f0bf4] NFC…D1832_IPD1832-D01-P01-A19) | 3 of 4
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (6)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 0 of 1
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[-        ] NFC…LIGNMENT_DNA:BWAMEM2_ALIGN -
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (9)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[57/580717] NFC…_IPD2051-D01-P01-A08_0006) | 0 of 16
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (9)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 0 of 1
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[57/580717] NFC…_IPD2051-D01-P01-A08_0006) | 0 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN -
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (9)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[57/580717] NFC…_IPD2051-D01-P01-A08_0006) | 0 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (10)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[57/580717] NFC…_IPD2051-D01-P01-A08_0006) | 1 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (10)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[57/580717] NFC…_IPD2051-D01-P01-A08_0006) | 1 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (11)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[94/472c73] NFC…_IPD2051-D01-P01-A08_0001) | 2 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (12)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[d3/e04712] NFC…_IPD1832-D01-P01-A19_0004) | 3 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (13)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[37/368fa9] NFC…_IPD1832-D01-P01-A19_0006) | 4 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (13)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[37/368fa9] NFC…_IPD1832-D01-P01-A19_0006) | 4 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (14)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[72/5d0620] NFC…_IPD2051-D01-P01-A08_0005) | 5 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (14)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[72/5d0620] NFC…_IPD2051-D01-P01-A08_0005) | 5 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (15)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[81/001723] NFC…_IPD1832-D01-P01-A19_0002) | 6 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (16)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[91/c8a288] NFC…_IPD1832-D01-P01-A19_0001) | 7 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (17)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[1a/7d9e24] NFC…_IPD2051-D01-P01-A08_0005) | 7 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (17)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[37/368fa9] NFC…_IPD1832-D01-P01-A19_0006) | 8 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (18)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[99/36bfad] NFC…_IPD2051-D01-P01-A08_0003) | 9 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (18)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[99/36bfad] NFC…_IPD2051-D01-P01-A08_0003) | 9 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (19)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[bf/d8205d] NFC…_IPD2051-D01-P01-A08_0006) | 10 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (20)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[9f/40b5fc] NFC…_IPD1832-D01-P01-A19_0007) | 11 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (20)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[9f/40b5fc] NFC…_IPD1832-D01-P01-A19_0007) | 11 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (21)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[99/36bfad] NFC…_IPD2051-D01-P01-A08_0003) | 12 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (21)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[99/36bfad] NFC…_IPD2051-D01-P01-A08_0003) | 12 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (22)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[f6/e69d1d] NFC…_IPD1832-D01-P01-A19_0005) | 13 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (23)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[f9/d3343f] NFC…_IPD1832-D01-P01-A19_0008) | 14 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (23)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[5f/c065f3] NFC…_IPD1832-D01-P01-A19_0003) | 15 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (24)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[14/99e475] NFC…_IPD1832-D01-P01-A19_0004) | 15 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (25)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[e4/362083] NFC…_IPD2051-D01-P01-A08_0008) | 16 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (25)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[e4/362083] NFC…_IPD2051-D01-P01-A08_0008) | 16 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (26)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[f9/d3343f] NFC…_IPD1832-D01-P01-A19_0008) | 17 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (26)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[14/99e475] NFC…_IPD1832-D01-P01-A19_0004) | 18 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (27)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[50/6c281d] NFC…_IPD1832-D01-P01-A19_0001) | 18 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (28)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[58/e8b9e7] NFC…_IPD2051-D01-P01-A08_0004) | 19 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (29)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[9b/68c9f4] NFC…_IPD2051-D01-P01-A08_0001) | 20 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (30)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[19/826a75] NFC…_IPD1832-D01-P01-A19_0007) | 21 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (31)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[58/e8b9e7] NFC…_IPD2051-D01-P01-A08_0004) | 22 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (31)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[58/e8b9e7] NFC…_IPD2051-D01-P01-A08_0004) | 22 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (32)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[9b/68c9f4] NFC…_IPD2051-D01-P01-A08_0001) | 23 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (32)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[5a/e292d4] NFC…_IPD1832-D01-P01-A19_0003) | 24 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (33)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[5b/fcd709] NFC…_IPD1832-D01-P01-A19_0008) | 24 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (34)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[ef/8d079a] NFC…_IPD2051-D01-P01-A08_0002) | 25 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (35)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[b1/668c2e] NFC…_IPD2051-D01-P01-A08_0007) | 26 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (36)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[91/d5aa12] NFC…_IPD2051-D01-P01-A08_0004) | 27 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (37)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[c1/2ef310] NFC…_IPD2051-D01-P01-A08_0003) | 28 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (37)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[c1/2ef310] NFC…_IPD2051-D01-P01-A08_0003) | 28 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX -
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (38)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 29 of 32
+[-        ] NFC…D_ALIGNMENT_RNA:STAR_ALIGN | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX | 0 of 1
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (39)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[91/d5aa12] NFC…_IPD2051-D01-P01-A08_0004) | 30 of 32
+[82/7bb8a0] NFC…D2051_IPD2051-R03-P01-A08) | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX | 0 of 1
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (39)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[91/d5aa12] NFC…_IPD2051-D01-P01-A08_0004) | 30 of 32
+[82/7bb8a0] NFC…D2051_IPD2051-R03-P01-A08) | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX | 0 of 1
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (40)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[c1/2ef310] NFC…_IPD2051-D01-P01-A08_0003) | 31 of 32
+[4d/4ba086] NFC…D2051_IPD2051-R03-P01-A08) | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX | 0 of 1
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (41)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[a4/44f0bb] NFC…D1832_IPD1832-R03-P01-A19) | 0 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT -
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (42)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 1 of 4
+[-        ] NFC…LIGNMENT_RNA:SAMTOOLS_SORT | 0 of 1
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (43)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 1 of 4
+[38/898bfd] NFC…D2051_IPD2051-R03-P01-A08) | 0 of 1
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[-        ] NFC…TED:REDUX_PROCESSING:REDUX | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (44)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[4d/4ba086] NFC…D2051_IPD2051-R03-P01-A08) | 2 of 4
+[38/898bfd] NFC…D2051_IPD2051-R03-P01-A08) | 0 of 2
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (44)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[4d/4ba086] NFC…D2051_IPD2051-R03-P01-A08) | 2 of 4
+[38/898bfd] NFC…D2051_IPD2051-R03-P01-A08) | 0 of 2
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (45)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[4d/4ba086] NFC…D2051_IPD2051-R03-P01-A08) | 2 of 4
+[74/26e05c] NFC…D2051_IPD2051-R03-P01-A08) | 1 of 2
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (46)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[a4/44f0bb] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+[74/26e05c] NFC…D2051_IPD2051-R03-P01-A08) | 1 of 3
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE -
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (47)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[a4/44f0bb] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+[78/58e5cf] NFC…D1832_IPD1832-R03-P01-A19) | 2 of 3
+[-        ] NFC…IGNMENT_RNA:SAMBAMBA_MERGE | 0 of 1
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (48)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[a4/44f0bb] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+[78/58e5cf] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 3
+[f7/518871] NFC…A:SAMBAMBA_MERGE (IPD2051) | 0 of 1
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (48)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[a4/44f0bb] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+[78/58e5cf] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 3
+[f7/518871] NFC…A:SAMBAMBA_MERGE (IPD2051) | 0 of 1
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (49)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+[f7/518871] NFC…A:SAMBAMBA_MERGE (IPD2051) | 0 of 1
+[-        ] NFC…T_RNA:GATK4_MARKDUPLICATES -
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (50)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+[f7/518871] NFC…A:SAMBAMBA_MERGE (IPD2051) | 1 of 1
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 0 of 1
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (50)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+[f7/518871] NFC…A:SAMBAMBA_MERGE (IPD2051) | 1 of 1
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 0 of 1
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (51)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 1 of 2
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 0 of 1
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (51)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 0 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (52)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 0 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[-        ] NFC…ETED:AMBER_PROFILING:AMBER -
+[-        ] NFC…ED:COBALT_PROFILING:COBALT -
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE -
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC -
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+Plus 9 more processes waiting for tasks…
+
+executor >  local (55)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 0 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 0 of 1
+[-        ] NFC…ED:COBALT_PROFILING:COBALT | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[84/4d0bc4] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+Plus 7 more processes waiting for tasks…
+
+executor >  local (55)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 0 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[-        ] NFC…ED:COBALT_PROFILING:COBALT | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[84/4d0bc4] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+Plus 7 more processes waiting for tasks…
+
+executor >  local (56)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 0 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[84/4d0bc4] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+Plus 7 more processes waiting for tasks…
+
+executor >  local (56)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 0 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[84/4d0bc4] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 1
+Plus 7 more processes waiting for tasks…
+
+executor >  local (56)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX -
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[84/4d0bc4] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 1
+Plus 7 more processes waiting for tasks…
+
+executor >  local (56)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 1
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[84/4d0bc4] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+Plus 7 more processes waiting for tasks…
+
+executor >  local (57)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 1
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[1f/cf760c] NFC…D2051_IPD2051-R03-P01-A08) | 1 of 2
+Plus 7 more processes waiting for tasks…
+
+executor >  local (57)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 1
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 1
+[-        ] NFC…RGETED:ESVEE_CALLING:ESVEE | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[1f/cf760c] NFC…D2051_IPD2051-R03-P01-A08) | 2 of 2
+Plus 7 more processes waiting for tasks…
+
+executor >  local (58)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[20/de29b1] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 1
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 1
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 1
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 1
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 1
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 1
+[1f/cf760c] NFC…D2051_IPD2051-R03-P01-A08) | 2 of 2
+Plus 7 more processes waiting for tasks…
+
+executor >  local (58)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 1
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 0 of 2
+[1f/cf760c] NFC…D2051_IPD2051-R03-P01-A08) | 2 of 3
+Plus 7 more processes waiting for tasks…
+
+executor >  local (60)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 1
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[20/9242e9] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 3
+Plus 7 more processes waiting for tasks…
+
+executor >  local (60)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[45/ce8c89] NFC…4_MARKDUPLICATES (IPD2051) | 1 of 2
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 1
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[20/9242e9] NFC…D1832_IPD1832-D01-P01-A19) | 3 of 3
+Plus 7 more processes waiting for tasks…
+
+executor >  local (60)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 2
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[20/9242e9] NFC…D1832_IPD1832-D01-P01-A19) | 3 of 4
+Plus 7 more processes waiting for tasks…
+
+executor >  local (61)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 2
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+Plus 7 more processes waiting for tasks…
+
+executor >  local (61)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 2
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 3 of 4
+Plus 7 more processes waiting for tasks…
+
+executor >  local (61)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 2
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 0 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[-        ] NFC…:SAGE_CALLING:SAGE_SOMATIC | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (62)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[-        ] NFC…OFOX_QUANTIFICATION:ISOFOX | 0 of 2
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 0 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (63)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 0 of 2
+[e2/5ed010] NFC…_PROFILING:AMBER (IPD2051) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 1 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 0 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (64)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 0 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 1 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (64)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 0 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 1 of 2
+[5c/3a6719] NFC…PROFILING:COBALT (IPD2051) | 1 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (65)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 1 of 2
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (65)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 1 of 2
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[f2/1f6c95] NFC…EE_CALLING:ESVEE (IPD2051) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (66)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (66)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 1 of 2
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (67)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (67)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[e4/3426e7] NFC…D2051_IPD2051-D01-P01-A08) | 1 of 2
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (67)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[c2/41bc82] NFC…IFICATION:ISOFOX (IPD2051) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 0 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[-        ] NFC…VE_ANNOTATION:PAVE_SOMATIC -
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (69)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 1 of 2
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 0 of 1
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (69)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 1 of 2
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 0 of 1
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (69)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 0 of 1
+[-        ] NFC…ETED:PURPLE_CALLING:PURPLE -
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (70)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 0 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (70)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 0 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (70)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[-        ] NFC…APPEND:SAGE_APPEND_SOMATIC -
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+Plus 7 more processes waiting for tasks…
+
+executor >  local (73)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 0 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 0 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 0 of 1
+Plus 5 more processes waiting for tasks…
+
+executor >  local (74)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 0 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 0 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 0 of 1
+Plus 4 more processes waiting for tasks…
+
+executor >  local (74)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 0 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 0 of 1
+Plus 4 more processes waiting for tasks…
+
+executor >  local (75)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 0 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 0 of 1
+Plus 3 more processes waiting for tasks…
+
+executor >  local (75)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 0 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+Plus 3 more processes waiting for tasks…
+
+executor >  local (76)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 0 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 0 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (76)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 0 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (76)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[7a/0469d9] NFC…ING:SAGE_SOMATIC (IPD2051) | 1 of 2
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[3b/987329] NFC…ION:PAVE_SOMATIC (IPD2051) | 1 of 1
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (77)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 1 of 2
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 1
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (77)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[28/b22329] NFC…E_CALLING:PURPLE (IPD2051) | 1 of 2
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (78)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 1 of 2
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (78)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[02/aa140f] NFC…E_APPEND_SOMATIC (IPD2051) | 1 of 1
+[62/b4900f] NFC…ION:LINX_SOMATIC (IPD2051) | 1 of 1
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[f2/001c66] NFC…AC_CALLING:LILAC (IPD2051) | 1 of 1
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (81)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 1 of 2
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 1 of 2
+[93/c2cc82] NFC…:LINX_VISUALISER (IPD2051) | 1 of 1
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 1 of 2
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (82)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 1 of 2
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 1 of 2
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 1 of 2
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (82)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 1 of 2
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 1 of 2
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 1 of 2
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (82)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 1 of 2
+[6f/0f8e57] NFC…TTING:LINXREPORT (IPD2051) | 1 of 1
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 1 of 2
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (83)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 2 of 2 ✔
+[5c/05edfc] NFC…TTING:LINXREPORT (IPD1832) | 1 of 2
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 1 of 2
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (83)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 2 of 2 ✔
+[5c/05edfc] NFC…TTING:LINXREPORT (IPD1832) | 2 of 2 ✔
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 1 of 2
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (83)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 2 of 2 ✔
+[5c/05edfc] NFC…TTING:LINXREPORT (IPD1832) | 2 of 2 ✔
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 2 of 2 ✔
+[47/274ee6] NFC…REPORTING:ORANGE (IPD2051) | 1 of 1
+Plus 2 more processes waiting for tasks…
+
+executor >  local (84)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 2 of 2 ✔
+[5c/05edfc] NFC…TTING:LINXREPORT (IPD1832) | 2 of 2 ✔
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 2 of 2 ✔
+[3c/bd159d] NFC…REPORTING:ORANGE (IPD1832) | 1 of 2
+Plus 2 more processes waiting for tasks…
+
+executor >  local (84)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 2 of 2 ✔
+[5c/05edfc] NFC…TTING:LINXREPORT (IPD1832) | 2 of 2 ✔
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 2 of 2 ✔
+[3c/bd159d] NFC…REPORTING:ORANGE (IPD1832) | 2 of 2 ✔
+Plus 2 more processes waiting for tasks…
+
+executor >  local (84)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 2 of 2 ✔
+[5c/05edfc] NFC…TTING:LINXREPORT (IPD1832) | 2 of 2 ✔
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 2 of 2 ✔
+[3c/bd159d] NFC…REPORTING:ORANGE (IPD1832) | 2 of 2 ✔
+Plus 2 more processes waiting for tasks…
+-[nf-core/oncoanalyser] Pipeline completed successfully-
+
+executor >  local (84)
+[90/f5aa88] NFC…E:DECOMP_BWAMEM2_INDEX (1) | 1 of 1 ✔
+[04/a7725c] NFC…ENCE:DECOMP_STAR_INDEX (1) | 1 of 1 ✔
+[64/ce9043] NFC…D1832_IPD1832-D01-P01-A19) | 4 of 4 ✔
+[86/fbcfcf] NFC…_IPD2051-D01-P01-A08_0008) | 32 of 32 ✔
+[1b/b2e71e] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[82/2fb37d] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[55/6bec28] NFC…A:SAMBAMBA_MERGE (IPD1832) | 2 of 2 ✔
+[ca/fadf51] NFC…4_MARKDUPLICATES (IPD1832) | 2 of 2 ✔
+[98/3a12d0] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[34/096396] NFC…IFICATION:ISOFOX (IPD1832) | 2 of 2 ✔
+[79/cbd4c9] NFC…_PROFILING:AMBER (IPD1832) | 2 of 2 ✔
+[bc/3bd335] NFC…PROFILING:COBALT (IPD1832) | 2 of 2 ✔
+[2e/f4af1a] NFC…EE_CALLING:ESVEE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…SAGE_CALLING:SAGE_GERMLINE -
+[15/b8aff4] NFC…ING:SAGE_SOMATIC (IPD1832) | 2 of 2 ✔
+[-        ] NFC…E_ANNOTATION:PAVE_GERMLINE -
+[b1/ad9710] NFC…ION:PAVE_SOMATIC (IPD1832) | 2 of 2 ✔
+[56/f94553] NFC…E_CALLING:PURPLE (IPD1832) | 2 of 2 ✔
+[-        ] NFC…PPEND:SAGE_APPEND_GERMLINE -
+[95/08a598] NFC…E_APPEND_SOMATIC (IPD1832) | 2 of 2 ✔
+[7b/28a99b] NFC…ION:LINX_SOMATIC (IPD1832) | 2 of 2 ✔
+[50/693b08] NFC…:LINX_VISUALISER (IPD1832) | 2 of 2 ✔
+[5c/05edfc] NFC…TTING:LINXREPORT (IPD1832) | 2 of 2 ✔
+[a3/0ca543] NFC…D1832_IPD1832-D01-P01-A19) | 2 of 2 ✔
+[7f/2b60c3] NFC…D1832_IPD1832-R03-P01-A19) | 4 of 4 ✔
+[76/b38962] NFC…AC_CALLING:LILAC (IPD1832) | 2 of 2 ✔
+[3c/bd159d] NFC…REPORTING:ORANGE (IPD1832) | 2 of 2 ✔
+Plus 2 more processes waiting for tasks…
+-[nf-core/oncoanalyser] Pipeline completed successfully-
+Completed at: 21-Jan-2026 23:30:08
+Duration    : 52m 8s
+CPU hours   : 34.2
+Succeeded   : 84
+
+
+
+Job 23136598 consumed 53.2 billing hours from project p1753_tsd.
+
+Submitted 2026-01-21T22:37:48; waited 0.0 seconds in the queue after becoming eligible to run.
+
+Requested wallclock time: 8.3 days
+Elapsed wallclock time:   52.4 minutes
+
+Job exited normally.
+
+Task and CPU statistics:
+ID              CPUs  Tasks  CPU util                Start   Elapsed  Exit status
+23136598          60            0.0 %  2026-01-21T22:37:48  3141.0 s  0
+23136598.batch    60      1    39.4 %  2026-01-21T22:37:48  3141.0 s  0
+
+Used CPU time:   20.6 CPU hours
+Unused CPU time: 1.3 CPU days
+
+Memory statistics, in GiB:
+ID               Alloc   Usage
+23136598         480.0        
+23136598.batch   480.0   126.6
+
+Job 23136598 completed at Wed Jan 21 23:30:09 CET 2026
