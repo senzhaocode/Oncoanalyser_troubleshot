@@ -1,0 +1,2 @@
+SampleId,QcStatus,TotalFragments,DuplicateFragments,SplicedFragmentPerc,UnsplicedFragmentPerc,AltFragmentPerc,ChimericFragmentPerc,SplicedGeneCount,ReadLength,FragLength5th,FragLength50th,FragLength95th,EnrichedGenePercent,MedianGCRatio,ForwardStrandPercent
+IPD2051-R03-P01-A08,WARN_DUPLICATE_RATE,11725155,10572494,0.660,0.046,0.066,0.000,54,93,74,114,184,0.000,0.445,0.494
